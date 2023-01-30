@@ -1,20 +1,14 @@
-const refs = {
-    textInput: document.getElementById('name-input'),
-    textOutput: document.getElementById('name-output'),
-};
-
- refs.textInput.addEventListener('input', onInputChange)
 
 
+const textInput = document.getElementById("name-input");
+const textOutput = document.getElementById("name-output");
 
- function onInputChange(event){
-    console.log(event.currentTarget.value);
-    refs.textOutput.textContent = event.currentTarget.value;
-    if (textInput.value !== '0'){
-        textOutput.textContent = textnput.value;
-    }
-    else {
-        textOutput.textContent = 'Anonimus';
-    }
-    
- }
+textInput.addEventListener("input", inputToSpan);
+
+function inputToSpan() {
+  if (textInput.value !== "") {
+    textOutput.textContent = textInput.value;
+  } else {
+    textOutput.textContent = "Anonymous";
+  }
+}

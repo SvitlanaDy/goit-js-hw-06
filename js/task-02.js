@@ -6,17 +6,17 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
- const body = document.getElementById("ingredients");
-const ulElem = document.createElement('ul');
-for(const ingredient of ingredients){
-  const liElem = document.createElement('li');
-  liElem.textContent = ingredient;
-  liElem.classList.add("item");
-console.log(liElem.classList);
-  ulElem.appendChild(liElem);
-   console.log (ingredient);
-}
-body.appendChild(ulElem)
+//  const body = document.getElementById("ingredients");
+// const ulElem = document.createElement('ul');
+// for(const ingredient of ingredients){
+//   const liElem = document.createElement('li');
+//   liElem.textContent = ingredient;
+//   liElem.classList.add("item");
+// console.log(liElem.classList);
+//   ulElem.appendChild(liElem);
+//    console.log (ingredient);
+// }
+// body.appendChild(ulElem)
             //*map*
 // const ulElem = document.createElement('ul');
 
@@ -40,4 +40,15 @@ body.appendChild(ulElem)
 // ulElem.insertAdjacentHTML('beforeend', listContent);
 // body.appendChild(ulElem);
 
+const list = document.querySelector("#ingredients");
+
+const liItems = [];
+ingredients.map((item) => {
+  const liElement = document.createElement("li");
+  liElement.textContent = item;
+  liElement.classList.add("item");
+  liItems.push(liElement);
+});
+
+list.append(...liItems);
 
